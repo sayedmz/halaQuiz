@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, white 8%, #48dbfb 50%, #7f72f5 100%);
+  padding: 20px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: transparent;
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: formee 1.2s ease-in-out;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 20px;
+  animation: title 1.5s ease forwards;
+  opacity: 0;
+  animation-delay: 0.8s;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 3px;
+  width: 40px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+form .user-details .input-box {
+  width: calc(50% - 10px);
+}
+
+.user-details .input-box .details {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.user-details .input-box input {
+  background-color: transparent;
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+  border-color: #9b59b6;
+  background-color: white;
+  transform: scale(1.08);
+  border-radius: 12px;
+}
+.user-details .input-box ::placeholder {
+  color: black;
+}
+
+/* Gender Section */
+.gender-details {
+  margin-top: 10px;
+}
+.gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 20px 0 10px;
+}
+
+.gender-details .category {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gender-details .category label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+}
+
+.gender-details .category .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  border: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Optional: Highlight selected gender */
+input#dot-1:checked ~ .category label[for="dot-1"] .dot,
+input#dot-2:checked ~ .category label[for="dot-2"] .dot {
+  background: #9b59b6;
+  border-color: #d9d9d9;
+}
+
+form .button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+form .button input {
+  width: 80%;
+  padding: 12px;
+  background: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 1s;
+  opacity: 0.7;
+}
+
+form .button input:hover {
+  width: 100%;
+  color: white;
+  background: #787ff6;
+  opacity: 1;
+}
+.goTOHome {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.goTOHome a {
+  text-align: center;
+  width: 80%;
+  padding: 12px;
+  margin-top: 10px;
+  background: white;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 1s;
+  opacity: 0.7;
+  text-decoration: none;
+}
+.goTOHome a:hover {
+  width: 100%;
+  color: white;
+  background: #787ff6;
+  opacity: 1;
+}
+
+/* Responsive Design */
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .container {
+    width: 100%;
+    margin-top: 30px;
+    box-shadow: none;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .user-details {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .user-details .input-box {
+    width: 100% !important;
+  }
+
+  .gender-details {
+    text-align: center;
+  }
+
+  .gender-details .category {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  form .button input,
+  .goTOHome a {
+    width: 100% !important;
+    font-size: 16px;
+  }
+
+  .goTOHome {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 15px;
+  }
+
+  .container .title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .user-details .input-box .details {
+    font-size: 14px;
+  }
+
+  .user-details .input-box input {
+    font-size: 14px;
+  }
+
+  form .button input,
+  .goTOHome a {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Keyframes  */
+@keyframes formee {
+  0% {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes title {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+/* input in form  */
+.input-box {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: Input 0.5s ease forwards;
+}
+
+.input-box:nth-child(1) {
+  animation-delay: 1s;
+}
+.input-box:nth-child(2) {
+  animation-delay: 1.2s;
+}
+.input-box:nth-child(3) {
+  animation-delay: 1.4s;
+}
+.input-box:nth-child(4) {
+  animation-delay: 1.6s;
+}
+.input-box:nth-child(5) {
+  animation-delay: 1.8s;
+}
+.input-box:nth-child(6) {
+  animation-delay: 2s;
+}
+
+@keyframes Input {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
