@@ -97,20 +97,32 @@ nextButton.addEventListener("click", function () {
 
     //=======================================================
 
-    const User = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    let loggedInUser = JSON.parse(sessionStorage.getItem("loggedInUser"));
+    let quizResults = JSON.parse(localStorage.getItem("quizResults")) || [];
 
-    const quizResults = JSON.parse(localStorage.getItem("quizResults")) || [];
-
-    quizResults.push({
-      fullName: User.fullName,
-      username: User.username,
-      email: User.email,
-      gender: User.phone,
+    let resultData = {
+      fullName: loggedInUser.fullName,
+      username: loggedInUser.username,
+      email: loggedInUser.email,
+      phone: loggedInUser.phone,
+      gender: loggedInUser.gender,
       score: score,
       total: questions.length,
-    });
+    };
+
+    // تحقق إذا كان هالمستخدم عنده نتيجة سابقة، وحدثها
+    let existingIndex = quizResults.findIndex(
+      (r) => r.email === resultData.email
+    );
+
+    if (existingIndex !== -1) {
+      quizResults[existingIndex] = resultData;
+    } else {
+      quizResults.push(resultData);
+    }
 
     localStorage.setItem("quizResults", JSON.stringify(quizResults));
+
     //============================================================
   } else {
     var page = document.querySelector(".quiz-box");
