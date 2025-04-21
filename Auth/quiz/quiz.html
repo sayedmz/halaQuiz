@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>About</title>
+    <title>Quiz Selection</title>
+    <!-- Changed title -->
     <meta charset="utf-8" />
     <link rel="stylesheet" href="quiz.css" />
     <link
@@ -11,6 +12,7 @@
   </head>
   <body>
     <nav>
+      <!-- ... (Nav remains the same) ... -->
       <div class="container nav__container">
         <a href="index.html"></a>
         <ul class="nav_menu">
@@ -25,21 +27,37 @@
       </div>
     </nav>
 
-    <section class="quiz">
-      <div class="home">
-        <div class="text-home">
-          <h1>QUIZ</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, quam
-            harum accusantium, accusamus blanditiis, eum consequuntur quas iste
-            quis repudiandae incidunt et cumque libero qui!
-          </p>
-          <button class="btn-primary">Start Quiz</button>
+    <!-- Changed section.quiz to quiz-selection-area -->
+    <section class="quiz-selection-area">
+      <div class="container">
+        <!-- Added a standard container -->
+        <h1 class="quiz-main-title">Choose Your Quiz</h1>
+        <div class="quiz-selection">
+          <!-- Quiz Card 1: HTML -->
+          <div class="quiz-card" data-quiz-index="0">
+            <h2>HTML Quiz</h2>
+            <p>Test your knowledge of Hyper Text Markup Language.</p>
+            <button class="btn-primary start-quiz-btn">Start HTML Quiz</button>
+          </div>
+          <!-- Quiz Card 2: CSS -->
+          <div class="quiz-card" data-quiz-index="1">
+            <h2>CSS Quiz</h2>
+            <p>Assess your skills in Cascading Style Sheets.</p>
+            <button class="btn-primary start-quiz-btn">Start CSS Quiz</button>
+          </div>
+          <!-- Quiz Card 3: JavaScript -->
+          <div class="quiz-card" data-quiz-index="2">
+            <h2>JavaScript Quiz</h2>
+            <p>Challenge yourself with JavaScript fundamentals.</p>
+            <button class="btn-primary start-quiz-btn">Start JS Quiz</button>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Popup Info remains the same -->
     <div class="popup-info">
+      <!-- ... (content remains the same) ... -->
       <h2>Quiz Guide</h2>
       <span class="info">1.Lorem ipsum dolor sit, amet consectetur .</span
       ><br />
@@ -61,52 +79,71 @@
       </div>
     </div>
 
-    <div class="containe">
+    <!-- Quiz Container (was 'containe') -->
+    <div class="quiz-container">
+      <!-- Renamed from containe for clarity -->
       <section class="quiz-section">
         <div class="quiz-box">
           <div class="box">
-            <h1>Codehal Quiz</h1>
+            <!-- Added an ID to the title for easy update -->
+            <h1 id="quiz-title">Quiz Title</h1>
             <div class="quiz-header">
               <span>Quiz Website Tutorials</span>
+              <!-- Score display remains -->
               <span class="header-score"
-                >Score:<span class="score">0</span>/5</span
+                >Score:<span class="score">0</span>/<span
+                  class="total-questions"
+                  >?</span
+                ></span
               >
+              <!-- Added span for total questions -->
             </div>
-            <h2 class="question-text">What does HTML stand for?</h2>
+            <!-- Question text remains -->
+            <h2 class="question-text">Question text goes here...</h2>
+            <!-- Options list remains -->
             <div class="option-list">
+              <!-- Options will be populated by JS -->
               <div class="option" data-correct="false">
-                <span>A. Hyper Type Multi Language</span>
+                <span>Option A</span>
               </div>
               <div class="option" data-correct="false">
-                <span>B. Hyper Text Multiple Language</span>
-              </div>
-              <div class="option" data-correct="true">
-                <span>C. Hyper Text Markup Language</span>
+                <span>Option B</span>
               </div>
               <div class="option" data-correct="false">
-                <span>D. Home Text Multi Language</span>
+                <span>Option C</span>
+              </div>
+              <div class="option" data-correct="false">
+                <span>Option D</span>
               </div>
             </div>
+            <!-- Footer remains -->
             <div class="quiz-footer">
-              <span class="question-total">1 of 5 Question</span>
+              <span class="question-total">1 of X Question</span>
               <button class="next-btn" disabled>Next</button>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- Result Box remains mostly the same -->
       <div class="result-box">
         <h2>Quiz Result!</h2>
         <div class="percentage-container">
-          <span class="score-text">You Score 0 out of 5</span>
+          <!-- Score text remains -->
+          <span class="score-text">You Score X out of Y</span>
         </div>
         <div class="buttons">
+          <!-- Try again button remains -->
           <button class="try">Try Again</button>
+          <!-- Go Home button remains, links back to quiz selection -->
           <a href="quiz.html"><button class="gohome">Go To Home</button></a>
         </div>
       </div>
     </div>
+    <!-- End of quiz-container -->
 
     <footer>
+      <!-- ... (Footer remains the same) ... -->
       <div class="container footer-container">
         <div class="footer-1">
           <a href="index.html" class="footer-logo">></a>

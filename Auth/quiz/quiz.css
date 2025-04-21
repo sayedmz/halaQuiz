@@ -324,3 +324,122 @@ nav button {
 .result-box .percentage-container {
   width: 300px;
 }
+/* ======================================================================== */
+/* Quiz Selection Styles */
+/* ======================================================================== */
+
+.quiz-selection-area {
+  padding: 8rem 0 6rem; /* Adjusted padding top to account for fixed nav */
+  text-align: center; /* Center the main title */
+  min-height: 80vh; /* Ensure it takes decent space */
+  display: flex; /* Use flex to center content vertically */
+  align-items: center;
+  justify-content: center;
+  background-image: url(hex-textured-background-networking.jpg); /* Keep background */
+  background-size: cover;
+  background-position: center;
+}
+
+.quiz-main-title {
+  margin-bottom: 3rem;
+  color: #8ce8fc;
+}
+
+.quiz-selection {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  justify-content: center;
+  gap: 2rem; /* Space between cards */
+}
+
+.quiz-card {
+  background-color: rgba(15, 30, 45, 0.8); /* Semi-transparent background */
+  border: 1px solid #37a7bf;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px; /* Fixed width for cards */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.quiz-card:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+  border-color: #8ce8fc;
+}
+
+.quiz-card h2 {
+  color: #8ce8fc;
+  margin-bottom: 1rem;
+}
+
+.quiz-card p {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.quiz-card .btn-primary {
+  /* Styles for button inside card are inherited, but you can customize */
+  width: 100%; /* Make button full width of card */
+}
+
+/* Hide quiz and result sections initially */
+.quiz-container {
+  display: none; /* Was .containe */
+  position: absolute; /* Keep positioning */
+  top: 0;
+  left: 0; /* Start hidden off-screen or just use display: none */
+  width: 100%;
+  height: 100%;
+  background-color: #0f1e2d;
+  /* transition: left 0.5s ease; Remove left transition if using display none/flex */
+  /* Use flex to center quiz box vertically */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-container.show {
+  display: flex; /* Show using flex */
+}
+
+.result-box {
+  position: absolute; /* Keep absolute for centering */
+  /* ... other result-box styles ... */
+  display: none; /* Ensure it's hidden initially */
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-box.show {
+  display: flex; /* Show using flex */
+}
+
+/* Adjust original quiz section if needed */
+.quiz-section {
+  /* remove absolute positioning if quiz-container handles centering */
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  width: 90%; /* Max width */
+  max-width: 550px; /* Specific max width */
+  /* ... rest of quiz-section styles ... */
+}
+
+.quiz-box {
+  width: 100%; /* Take full width of quiz-section */
+  /* ... rest of quiz-box styles ... */
+}
+
+/* Ensure popup is hidden initially */
+.popup-info {
+  display: none;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+/* Style for blur effect target */
+.blur-background {
+  filter: blur(10px);
+  transition: filter 0.3s ease;
+}
